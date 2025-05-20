@@ -4,57 +4,54 @@ entities:
     seedCount: 20
     properties:
       # event
-      - { name: events-name, type: string }
+      - { name: event_name, type: string }
       - {
-          name: event-status,
+          name: event_status,
           type: choice,
           options: { values: [pending, booked, other] },
           default: other # Default value if property not specified.
         }
-      - { name: event-type, type: choice, options: { values: [gig, rehearsal, promotion, other] } }
-      - { name: event-website, type: link }
-      - { name: event-date, type: date }
-      - { name: event-description, type: richText }
+      - { name: event_type, type: choice, options: { values: [gig, rehearsal, promotion, other] } }
+      - { name: event_website, type: link }
+      - { name: event_date, type: date }
+      - { name: event_description, type: text }
       
       # venue
-      - { name: venue-website, type: link }
-      - { name: venue-address, type: location }
-      - { name: venue-name, type: string }
-      - { name: venue-contact, type: string }
-  
-      - { name: soundcheck-time, type: timestamp }
-      
-      
+      - { name: venue_website, type: link }
+      - { name: venue_address, type: location }
+      - { name: venue_name, type: string }
+      - { name: venue_contact, type: string }
+        
       # soundcheck
-      - { name: soundcheck-time, type: timestamp }
-      - { name: soundcheck-contact, type: string }
+      - { name: soundcheck_time, type: timestamp }
+      - { name: soundcheck_contact, type: string }
 
       # backline and technical
       - {
           name: backline,
           type: choice,
-          options: { values: [own, on-site, other] },
-          default: on-site # Default value if property not specified.
+          options: { values: [own, on_site, other] },
+          default: on_site # Default value if property not specified.
         }
-      - { name: backline-info, type: richText }
-      - { name: backline-contact, type: string }
+      - { name: backline_info, type: text }
+      - { name: backline_contact, type: string }
       # times
-      - { name: get-in, type: timestamp }
+      - { name: get_in, type: timestamp }
       - { name: doors, type: timestamp }
-      - { name: show-start-time, type: timestamp }
-      - { name: show-length-minutes, type: number }
+      - { name: show_start_time, type: timestamp }
+      - { name: show_length_minutes, type: number }
       
       # accomodation
       - { name: accommodation, type: choice, options: { values: [none, hotel, other] } }
-      - { name: accommodation-website, type: link }
-      - { name: accommodation-address, type: location }
-      - { name: accommodation-contact, type: string }
-      - { name: accommodation-check-in, type: timestamp }
-      - { name: accommodation-check-out, type: timestamp }
+      - { name: accommodation_website, type: link }
+      - { name: accommodation_address, type: location }
+      - { name: accommodation_contact, type: string }
+      - { name: accommodation_check-in, type: timestamp }
+      - { name: accommodation_check-out, type: timestamp }
 
       # transport
       - { name: transport, type: choice, options: { values: [none, bus, own, flight, other] } }
-      - { name: transport-info, type: richText }
+      - { name: transport_info, type: text }
       
     policies:
       read:
