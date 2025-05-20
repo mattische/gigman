@@ -5,7 +5,13 @@ entities:
     properties:
       # event
       - { name: events-name, type: text }
-      - { name: event-type, type: choice, options: { values: [gig, rehearsal] } }
+      - {
+          name: event-status,
+          type: choice,
+          options: { values: [pending, booked, other] },
+          default: other # Default value if property not specified.
+        }
+      - { name: event-type, type: choice, options: { values: [gig, rehearsal, promotion, other] } }
       - { name: event-website, type: link }
       - { name: event-date, type: date }
       - { name: event-description, type: richText }
@@ -17,12 +23,7 @@ entities:
       - { name: venue-contact, type: text }
   
       - { name: soundcheck-time, type: timestamp }
-      - {
-          name: status,
-          type: choice,
-          options: { values: [pending, booked, other] },
-          default: other # Default value if property not specified.
-        }
+      
       
       # soundcheck
       - { name: soundcheck-time, type: timestamp }
@@ -35,11 +36,26 @@ entities:
           options: { values: [own, on-site, other] },
           default: on-site # Default value if property not specified.
         }
+      - { name: backline-info, type: richText }
+      - { name: backline-contact, type: text }
       # times
       - { name: get-in, type: timestamp }
       - { name: doors, type: timestamp }
       - { name: show-start-time, type: timestamp }
       - { name: show-length-minutes, type: number }
+      
+      # accomodation
+      - { name: accommodation, type: choice, options: { values: [none, hotel, other] } }
+      - { name: accommodation-website, type: link }
+      - { name: accommodation-address, type: location }
+      - { name: accommodation-contact, type: text }
+      - { name: accommodation-check-in, type: timestamp }
+      - { name: accommodation-check-out, type: timestamp }
+
+      # transport
+      - { name: transport, type: choice, options: { values: [none, bus, own, flight, other] } }
+      - { name: transport-info, type: richText }
+      
     policies:
       read:
         - { access: public }

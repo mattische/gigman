@@ -20,6 +20,7 @@
     "manifest:seed": "node node_modules/manifest/dist/manifest/src/seed/scripts/seed.js"
   },
   "dependencies": {
+    "@mnfst/sdk": "^1.2.1",
     "manifest": "^4.11.10"
   }
 }
