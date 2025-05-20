@@ -4,7 +4,7 @@ entities:
     seedCount: 20
     properties:
       # event
-      - { name: events-name, type: text }
+      - { name: events-name, type: string }
       - {
           name: event-status,
           type: choice,
@@ -19,15 +19,15 @@ entities:
       # venue
       - { name: venue-website, type: link }
       - { name: venue-address, type: location }
-      - { name: venue-name, type: text }
-      - { name: venue-contact, type: text }
+      - { name: venue-name, type: string }
+      - { name: venue-contact, type: string }
   
       - { name: soundcheck-time, type: timestamp }
       
       
       # soundcheck
       - { name: soundcheck-time, type: timestamp }
-      - { name: soundcheck-contact, type: text }
+      - { name: soundcheck-contact, type: string }
 
       # backline and technical
       - {
@@ -37,7 +37,7 @@ entities:
           default: on-site # Default value if property not specified.
         }
       - { name: backline-info, type: richText }
-      - { name: backline-contact, type: text }
+      - { name: backline-contact, type: string }
       # times
       - { name: get-in, type: timestamp }
       - { name: doors, type: timestamp }
@@ -48,7 +48,7 @@ entities:
       - { name: accommodation, type: choice, options: { values: [none, hotel, other] } }
       - { name: accommodation-website, type: link }
       - { name: accommodation-address, type: location }
-      - { name: accommodation-contact, type: text }
+      - { name: accommodation-contact, type: string }
       - { name: accommodation-check-in, type: timestamp }
       - { name: accommodation-check-out, type: timestamp }
 
