@@ -56,4 +56,36 @@ entities:
     policies:
       read:
         - { access: public }
-    
+  
+  User:
+    seedCount: 12
+    belongsTo:
+      - Crew
+    mainProp: user_name
+    properties:
+      # user
+      - { name: user_name, type: string }
+      - { name: user_email, type: email }
+      - { name: user_phone, type: string }
+      - { name: user_website, type: link }
+      - { name: user_location, type: location }
+      - { name: user_bio, type: text }
+      
+    policies:
+      read:
+        - { access: public }
+
+  Crew:
+    seedCount: 3
+    properties:
+      # crew
+      - { name: crew_name, type: string }
+      - { name: crew_email, type: email }
+      - { name: crew_phone, type: string }
+      - { name: crew_website, type: link }
+      - { name: crew_location, type: location }
+      - { name: crew_bio, type: text }
+      
+    policies:
+      read:
+        - { access: public }
