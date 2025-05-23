@@ -1,7 +1,9 @@
 name: Gig Manager 🐾
 entities:
   Event:
-    seedCount: 20
+    seedCount: 30
+    belongsTo:
+      - Crew
     properties:
       # event
       - { name: event_name, type: string }
