@@ -20,7 +20,8 @@ entities:
       
       # venue
       - { name: venue_website, type: link }
-      - { name: venue_address, type: location }
+      - { name: venue_location, type: location }
+      - { name: venue_address, type: string }
       - { name: venue_name, type: string }
       - { name: venue_contact, type: string }
         
